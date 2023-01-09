@@ -1,1 +1,27 @@
-<p>list-user works!</p>
+<h1>Listado de Usuarios</h1>
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Rol</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr *ngFor="let user of Users.usuarios; let iControl = index">
+        <td>{{user.nombre}}</td>
+        <td>{{user.correo}}</td>
+        <td>{{user.rol}}</td>
+        <td *ngIf="user.estado == true">Activo</td>
+        <ng-template #elseBlock>Inactivo</ng-template>
+        <td>
+          <a class="btn btn-info" routerLink="/users/edit/{{user.uid}}"><i class="bi bi-pencil-square"></i>Editar</a>
+          <a class="btn btn-danger ms-3" (click)="deleteUser(user.uid, iControl )"><i class="bi bi-trash"></i>Borrar</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>

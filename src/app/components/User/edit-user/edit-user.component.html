@@ -1,1 +1,46 @@
-<p>edit-user works!</p>
+<h1>Editar Usuario</h1>
+
+<div class="card">
+
+    <div class="card-header">
+        Featured
+    </div>
+    
+    <div class="card-body">
+        <form [formGroup]="formEditUser">
+                
+            <input type="hidden" class="form-control" formControlName="uid" placeholder="Nombre" aria-label="uid">
+            
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre" aria-label="name">
+                 
+            </div>
+            
+            <div class="mb-3">
+                <label for="correo" class="form-label">Correo</label>
+                <input type="email" class="form-control" formControlName="correo" id="input_email" placeholder="Correo" aria-describedby="emailHelp">
+                
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="text" id="rol" class="form-control" formControlName="password" placeholder="Password">
+            </div>
+
+            <div class="mb-3">
+                <label for="rol" class="form-label">Rol</label>
+                <input type="text" id="rol" class="form-control" formControlName="rol" placeholder="Rol">
+            </div>
+            
+                                  
+        </form>
+        
+    
+    </div>
+    <div class="card-footer">
+        <button type="submit" (click)="editUser()" class="btn btn-primary">Crear</button>
+        <button  class="btn btn-success ms-3" routerLink="/users">Cancelar</button>
+    </div>
+    
+</div>
